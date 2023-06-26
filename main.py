@@ -1,32 +1,59 @@
+def add(a, b):
+    return a + b
 
-def calculator(a, b):
-    print(f"\nPerforming calculator on{a} and {b}")
-    print(f"{a} + {b} = {a + b}")
-    print(f"{a} + {b} = {a + b}")
-    print(f"{a} * {b} = {a * b}")
-    print(f"{a} / {b} = {a / b}")
-    print(f"{a} is greater than {b} is {a > b}")
-    print(f"{a} is equal to {b} is {a == b}")
-    print(f"{a} and {b} are the same object is {a is b}")
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        return "Error: Division by zero is not allowed."
+    else:
+        return a / b
+
+def compare(a, b):
+    if a > b:
+        return f"{a} is greater than {b}"
+    elif a < b:
+        return f"{a} is less than {b}"
+    else:
+        return f"{a} is equal to {b}"
+def is_same(a, b):
+    if a is b:
+        return "a and b point to the same object."
+    else:
+        return "a and b do not point to the same object."
+
 
 def main():
-    print("This is a basic app to demonstrate the use of basic operators in Python.")
+    print("Welcome to Basic Python Calculator!")
 
-    a = int(input("\nEnter a number for 'a': "))
-    b = int(input("Enter a number for 'b' : "))
+    a = int(input("Enter a number for 'a': "))
+    b = int(input("Enter a number for 'b': "))
 
-    calculator(a, b)
+    operation = int(input(
+        "\nChoose an operation: \n1. Add \n2. Subtract \n3. Multiply \n4. Divide \n5. Compare if a and b are the same object \n"))
 
-    my_list = [a, b]
-    print(f"\nCreated list: {my_list}")
+    if operation == 1:
+        print(f"The result is: {add(a, b)}")
+    elif operation == 2:
+        print(f"The result is: {subtract(a, b)}")
+    elif operation == 3:
+        print(f"The result is: {multiply(a, b)}")
+    elif operation == 4:
+        print(f"The result is : {divide(a, b)}")
+    elif operation == 5:
+        print(f"The result is: {compare(a, b)}")
+    elif operation == 6:
+        print(f"The result is: {is_same(a, b)}")
+    else:
+        print("Invalid operation selected.")
 
-    check_num = int(input("Enter a number to check if it is in the list: "))
-    print(f"{check_num} is in the list is {check_num in my_list}")
 
-    print("\nAssigning 'a' to 'c' (a = c)")
-    c = a
-    print(f"a: {a}, c: {c}")
-    print(f"'a' and 'c' point to the same object is {a is c}")
-
- if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
